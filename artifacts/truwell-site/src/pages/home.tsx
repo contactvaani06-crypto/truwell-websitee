@@ -226,7 +226,7 @@ export default function HomePage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold tracking-widest uppercase text-primary mb-4">Our Journey</h2>
+            <h2 className="font-bold tracking-widest uppercase text-primary mb-4 text-[29px]">Our Journey</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
               Started from a college dorm. Building for India's youth.
             </h3>
