@@ -198,14 +198,6 @@ export default function HomePage() {
               <div className="mb-4 flex justify-between items-start">
                 <span className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Coming Soon</span>
               </div>
-              <div className="mb-6 rounded-2xl overflow-hidden bg-background aspect-[4/3] flex items-center justify-center">
-                <div className="flex flex-col items-center justify-center gap-3 text-muted-foreground p-8 text-center">
-                  <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center">
-                    <span className="text-3xl font-serif font-bold text-secondary/40">B</span>
-                  </div>
-                  <span className="text-sm font-medium">Launching soon</span>
-                </div>
-              </div>
               <h4 className="text-4xl font-serif font-bold text-secondary mb-2">B-Juvenate</h4>
               <p className="text-xl text-secondary/80 font-medium mb-4">Multivitamin B-complex sachets</p>
               <div className="flex-grow">
