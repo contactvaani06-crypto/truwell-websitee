@@ -3,9 +3,47 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/forms/waitlist-form";
 import { CartDrawer } from "@/components/cart-drawer";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useLocation } from "wouter";
 import { FaInstagram } from "react-icons/fa";
+
+function BrandVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.muted = false;
+          video.play().catch(() => {
+            video.muted = true;
+            video.play().catch(() => {});
+          });
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="brand-video" className="bg-secondary">
+      <video
+        ref={videoRef}
+        src="/truwell-brand-video.mov"
+        controls
+        playsInline
+        className="w-full block"
+        data-testid="brand-video"
+      />
+    </section>
+  );
+}
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -81,6 +119,7 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+      <BrandVideo />
       {/* Who We Are */}
       <section id="who-we-are" className="py-24 md:py-32 bg-card relative">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -206,7 +245,6 @@ export default function HomePage() {
                   <span className="text-lg italic font-serif">"Fuel the body."</span>
                 </div>
               </div>
-              <div className="mb-6 h-[2.25rem]" />
               <Button size="lg" variant="outline" className="w-full text-lg rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => setWaitlistModalOpen(true)} data-testid="button-waitlist-b-juvenate">
                 Notify Me
               </Button>
