@@ -230,13 +230,13 @@ export default function HomePage() {
             </motion.div>
 
             {/* B-Juvenate */}
-            <motion.div variants={fadeIn} className="bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col transition-all">
+            <motion.div variants={fadeIn} className="bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col transition-all md:self-start">
               <div className="mb-4 flex justify-between items-start">
                 <span className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Coming Soon</span>
               </div>
               <h4 className="text-4xl font-serif font-bold text-secondary mb-2">B-Juvenate</h4>
               <p className="text-xl text-secondary/80 font-medium mb-4">Multivitamin B-complex sachets</p>
-              <div className="flex-grow">
+              <div>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   B6, B9, B12 + Magnesium Citrate. Orange flavour. Designed specifically for Indian vegetarians and busy professionals.
                 </p>
