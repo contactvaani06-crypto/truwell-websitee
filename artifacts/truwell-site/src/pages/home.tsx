@@ -275,7 +275,6 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
             <img src="/truwell-logo.png" alt="Truwell Logo" className="h-8 w-auto brightness-0 invert" />
-            <span className="font-serif font-bold text-xl">Truwell</span>
           </div>
           
           <div className="text-center md:text-left">
