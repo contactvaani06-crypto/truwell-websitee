@@ -278,7 +278,7 @@ export default function HomePage() {
             <img src="/truwell-logo-nobg.png" alt="Truwell Logo" className="h-8 w-auto brightness-0 invert" />
           </div>
           <div className="text-center md:text-left">
-            <p className="text-secondary-foreground/60">stay well, true well.</p>
+            <p className="text-secondary-foreground/60 text-[18px]">stay well, true well.</p>
           </div>
           <div className="flex items-center gap-6">
             <a href="https://instagram.com/truwell.in" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-primary transition-colors flex items-center gap-2" data-testid="link-instagram">
