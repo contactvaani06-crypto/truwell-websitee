@@ -47,7 +47,6 @@ export default function HomePage() {
           </Button>
         </div>
       </nav>
-
       {/* Hero Section */}
       <section id="hero" className="relative min-h-[100dvh] pt-20 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.15),transparent_50%)]" />
@@ -82,7 +81,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Who We Are */}
       <section id="who-we-are" className="py-24 md:py-32 bg-card relative">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -107,7 +105,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* What We Do */}
       <section id="what-we-do" className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=')] mask-image-[linear-gradient(to_bottom,white,transparent)]" />
@@ -154,7 +151,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Our Products */}
       <section id="products" className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
@@ -218,7 +214,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Our Journey */}
       <section id="journey" className="py-24 md:py-32 bg-secondary text-secondary-foreground">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -235,13 +230,10 @@ export default function HomePage() {
             <p className="text-xl text-secondary-foreground/80 leading-relaxed mb-6">
               A group of college students came together after realizing 70%+ Indians are fibre-deficient and 47% are Vitamin B12 deficient. Diabetes is rampant.
             </p>
-            <p className="text-xl text-secondary-foreground/80 leading-relaxed">
-              Existing supplements felt like medicine — we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.
-            </p>
+            <p className="text-xl text-secondary-foreground/80 leading-relaxed">Existing supplements felt like medicine - we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.</p>
           </motion.div>
         </div>
       </section>
-
       {/* The Science */}
       <section id="science" className="py-24 md:py-32 bg-card">
         <div className="max-w-6xl mx-auto px-6">
@@ -278,7 +270,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-secondary text-secondary-foreground py-12 border-t border-secondary-foreground/10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -302,7 +293,6 @@ export default function HomePage() {
           <p>&copy; {new Date().getFullYear()} Truwell. All rights reserved.</p>
         </div>
       </footer>
-
       {/* Dialogs */}
       <Dialog open={orderModalOpen} onOpenChange={setOrderModalOpen}>
         <DialogContent className="sm:max-w-md">
@@ -315,7 +305,6 @@ export default function HomePage() {
           <OrderForm productId={1} onSuccess={() => setOrderModalOpen(false)} />
         </DialogContent>
       </Dialog>
-
       <Dialog open={waitlistModalOpen} onOpenChange={setWaitlistModalOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
