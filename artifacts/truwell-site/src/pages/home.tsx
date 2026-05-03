@@ -96,7 +96,7 @@ export default function HomePage() {
             <h2 className="text-sm font-bold tracking-widest uppercase text-primary mb-4">Who We Are</h2>
             <p className="text-3xl md:text-5xl font-serif font-medium leading-snug text-secondary">We are a group of young college students who believe nutrition shouldn't be a chore.</p>
             <div className="mt-8 text-lg text-muted-foreground max-w-3xl mx-auto space-y-6">
-              <p>Founded by a passionate group of health enthusiasts from India's top colleges, we're on a mission to transform the way the country fuels itself - one delicious bite at a time.</p>
+              <p>Founded by a passionate group of health enthusiasts, we're on a mission to transform the way the country fuels itself - one delicious bite at a time.</p>
               <p>
                 We combine modern nutritional science with traditional Indian wisdom to create products that actually taste good.
               </p>
