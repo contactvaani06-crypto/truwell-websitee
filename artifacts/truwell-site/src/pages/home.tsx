@@ -254,17 +254,28 @@ export default function HomePage() {
       </section>
       {/* Our Journey */}
       <section id="journey" className="py-24 md:py-32 bg-secondary text-secondary-foreground">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            variants={fadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2 className="font-bold tracking-widest uppercase text-primary mb-4 text-[29px]">Our Journey</h2>
-            <p className="text-xl text-secondary-foreground/80 leading-relaxed mb-6">Truwell came together after realizing 70%+ Indians are fibre-deficient and 47% are Vitamin B12 deficient. Diabetes is rampant.</p>
-            <p className="text-xl text-secondary-foreground/80 leading-relaxed">Existing supplements felt like medicine - we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.</p>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <motion.div
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <h2 className="font-bold tracking-widest uppercase text-primary mb-6 text-[29px]">Our Journey</h2>
+              <p className="text-xl text-secondary-foreground/80 leading-relaxed mb-6">Truwell came together after realizing 70%+ Indians are fibre-deficient and 47% are Vitamin B12 deficient. Diabetes is rampant.</p>
+              <p className="text-xl text-secondary-foreground/80 leading-relaxed">Existing supplements felt like medicine - we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img src="/truwell-team.png" alt="The Truwell team" className="w-full h-full object-cover" />
+            </motion.div>
+          </div>
         </div>
       </section>
       {/* The Science */}
