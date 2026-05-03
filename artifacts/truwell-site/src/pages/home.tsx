@@ -233,9 +233,7 @@ export default function HomePage() {
             <p className="text-xl text-secondary-foreground/80 leading-relaxed mb-6">
               A group of college students came together after realizing 70%+ Indians are fibre-deficient and 47% are Vitamin B12 deficient. Diabetes is rampant.
             </p>
-            <p className="text-xl text-secondary-foreground/80 leading-relaxed">
-              Existing supplements felt like medicine — we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.
-            </p>
+            <p className="text-xl text-secondary-foreground/80 leading-relaxed">Existing supplements felt like medicine - we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.</p>
           </motion.div>
         </div>
       </section>
