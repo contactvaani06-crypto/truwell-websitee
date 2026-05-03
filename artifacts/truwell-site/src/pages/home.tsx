@@ -227,9 +227,6 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="font-bold tracking-widest uppercase text-primary mb-4 text-[29px]">Our Journey</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
-              Started from a college dorm. Building for India's youth.
-            </h3>
             <p className="text-xl text-secondary-foreground/80 leading-relaxed mb-6">Truwell came together after realizing 70%+ Indians are fibre-deficient and 47% are Vitamin B12 deficient. Diabetes is rampant.</p>
             <p className="text-xl text-secondary-foreground/80 leading-relaxed">Existing supplements felt like medicine - we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.</p>
           </motion.div>
