@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { OrderForm } from "@/components/forms/order-form";
 import { WaitlistForm } from "@/components/forms/waitlist-form";
+import { CartDrawer } from "@/components/cart-drawer";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { FaInstagram } from "react-icons/fa";
 
 const fadeIn = {
@@ -20,8 +21,8 @@ const stagger = {
 };
 
 export default function HomePage() {
-  const [orderModalOpen, setOrderModalOpen] = useState(false);
   const [waitlistModalOpen, setWaitlistModalOpen] = useState(false);
+  const [, setLocation] = useLocation();
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -34,19 +35,22 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo("hero")}>
             <img src="/truwell-logo-nobg.png" alt="Truwell Logo" className="h-10 w-auto" />
-            <span className="font-serif font-bold text-xl text-secondary tracking-tight">Truwell</span>
           </div>
           <div className="hidden md:flex items-center gap-8 font-medium text-sm text-foreground/80">
-            <button onClick={() => scrollTo("who-we-are")} className="hover:text-primary transition-colors data-[testid=nav-who]">Who We Are</button>
-            <button onClick={() => scrollTo("what-we-do")} className="hover:text-primary transition-colors data-[testid=nav-what]">What We Do</button>
-            <button onClick={() => scrollTo("products")} className="hover:text-primary transition-colors data-[testid=nav-products]">Products</button>
-            <button onClick={() => scrollTo("science")} className="hover:text-primary transition-colors data-[testid=nav-science]">The Science</button>
+            <button onClick={() => scrollTo("who-we-are")} className="hover:text-primary transition-colors" data-testid="nav-who">Who We Are</button>
+            <button onClick={() => scrollTo("what-we-do")} className="hover:text-primary transition-colors" data-testid="nav-what">What We Do</button>
+            <button onClick={() => scrollTo("products")} className="hover:text-primary transition-colors" data-testid="nav-products">Products</button>
+            <button onClick={() => scrollTo("science")} className="hover:text-primary transition-colors" data-testid="nav-science">The Science</button>
           </div>
-          <Button onClick={() => scrollTo("products")} className="rounded-full px-6 font-semibold shadow-sm" data-testid="button-nav-cta">
-            Shop Now
-          </Button>
+          <div className="flex items-center gap-3">
+            <CartDrawer />
+            <Button onClick={() => setLocation("/product/coco-gut")} className="rounded-full px-6 font-semibold shadow-sm" data-testid="button-nav-cta">
+              Shop Now
+            </Button>
+          </div>
         </div>
       </nav>
+
       {/* Hero Section */}
       <section id="hero" className="relative min-h-[100dvh] pt-20 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.15),transparent_50%)]" />
@@ -61,7 +65,7 @@ export default function HomePage() {
               <span className="text-primary italic">true well.</span>
             </h1>
           </motion.div>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -75,12 +79,13 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Button size="lg" className="rounded-full px-10 py-6 text-lg shadow-lg hover-elevate-2" onClick={() => scrollTo("products")} data-testid="button-hero-cta">
+            <Button size="lg" className="rounded-full px-10 py-6 text-lg shadow-lg" onClick={() => scrollTo("products")} data-testid="button-hero-cta">
               Explore Products
             </Button>
           </motion.div>
         </div>
       </section>
+
       {/* Who We Are */}
       <section id="who-we-are" className="py-24 md:py-32 bg-card relative">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -105,9 +110,10 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
       {/* What We Do */}
       <section id="what-we-do" className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=')] mask-image-[linear-gradient(to_bottom,white,transparent)]" />
+        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=')]" />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -151,6 +157,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* Our Products */}
       <section id="products" className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
@@ -159,7 +166,7 @@ export default function HomePage() {
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-secondary">Our Products</h3>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 gap-8 md:gap-12"
             variants={stagger}
             initial="hidden"
@@ -167,46 +174,58 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             {/* Coco Gut */}
-            <motion.div variants={fadeIn} className="bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col hover-elevate-2 transition-all">
-              <div className="mb-6 flex justify-between items-start">
+            <motion.div variants={fadeIn} className="bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col transition-all">
+              <div className="mb-4 flex justify-between items-start">
                 <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Available Now</span>
               </div>
+              <div className="mb-6 rounded-2xl overflow-hidden bg-background aspect-[4/3] flex items-center justify-center">
+                <img src="/coco-gut-pack.png" alt="Coco Gut" className="w-full h-full object-contain p-4" />
+              </div>
               <h4 className="text-4xl font-serif font-bold text-secondary mb-2">Coco Gut</h4>
-              <p className="text-xl text-primary font-medium mb-6">Truwell's Fibre Chocolate</p>
-              
+              <p className="text-xl text-primary font-medium mb-4">Truwell's Fibre Chocolate</p>
               <div className="flex-grow">
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  25g bar • 7.3g fibre • 3g sugar • clean label (no emulsifiers, no additives). Dark chocolate with inulin and psyllium husk.
+                  24g bar • 7.34g fibre • 3g sugar • clean label. Dark chocolate with chickpeas, inulin and psyllium husk. No additives, no emulsifiers.
                 </p>
-                <div className="bg-background rounded-xl p-4 mb-8">
+                <div className="bg-background rounded-xl p-4 mb-6">
                   <span className="font-bold text-secondary uppercase tracking-wider text-sm block mb-1">Function</span>
                   <span className="text-lg italic font-serif">"Prepare the gut."</span>
                 </div>
               </div>
-              
-              <Button size="lg" className="w-full text-lg rounded-full" onClick={() => setOrderModalOpen(true)} data-testid="button-order-coco-gut">
+              <div className="flex items-baseline gap-3 mb-6">
+                <span className="text-2xl font-bold text-secondary">Rs. 199</span>
+                <span className="text-base text-muted-foreground line-through">Rs. 249</span>
+              </div>
+              <Button size="lg" className="w-full text-lg rounded-full" onClick={() => setLocation("/product/coco-gut")} data-testid="button-order-coco-gut">
                 Order Now
               </Button>
             </motion.div>
 
             {/* B-Juvenate */}
-            <motion.div variants={fadeIn} className="bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col hover-elevate-2 transition-all">
-              <div className="mb-6 flex justify-between items-start">
+            <motion.div variants={fadeIn} className="bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col transition-all">
+              <div className="mb-4 flex justify-between items-start">
                 <span className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Coming Soon</span>
               </div>
+              <div className="mb-6 rounded-2xl overflow-hidden bg-background aspect-[4/3] flex items-center justify-center">
+                <div className="flex flex-col items-center justify-center gap-3 text-muted-foreground p-8 text-center">
+                  <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <span className="text-3xl font-serif font-bold text-secondary/40">B</span>
+                  </div>
+                  <span className="text-sm font-medium">Launching soon</span>
+                </div>
+              </div>
               <h4 className="text-4xl font-serif font-bold text-secondary mb-2">B-Juvenate</h4>
-              <p className="text-xl text-secondary/80 font-medium mb-6">Multivitamin B-complex sachets</p>
-              
+              <p className="text-xl text-secondary/80 font-medium mb-4">Multivitamin B-complex sachets</p>
               <div className="flex-grow">
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   B6, B9, B12 + Magnesium Citrate. Orange flavour. Designed specifically for Indian vegetarians and busy professionals.
                 </p>
-                <div className="bg-background rounded-xl p-4 mb-8">
+                <div className="bg-background rounded-xl p-4 mb-6">
                   <span className="font-bold text-secondary uppercase tracking-wider text-sm block mb-1">Function</span>
                   <span className="text-lg italic font-serif">"Fuel the body."</span>
                 </div>
               </div>
-              
+              <div className="mb-6 h-[2.25rem]" />
               <Button size="lg" variant="outline" className="w-full text-lg rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={() => setWaitlistModalOpen(true)} data-testid="button-waitlist-b-juvenate">
                 Notify Me
               </Button>
@@ -214,6 +233,7 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
       {/* Our Journey */}
       <section id="journey" className="py-24 md:py-32 bg-secondary text-secondary-foreground">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -230,10 +250,13 @@ export default function HomePage() {
             <p className="text-xl text-secondary-foreground/80 leading-relaxed mb-6">
               A group of college students came together after realizing 70%+ Indians are fibre-deficient and 47% are Vitamin B12 deficient. Diabetes is rampant.
             </p>
-            <p className="text-xl text-secondary-foreground/80 leading-relaxed">Existing supplements felt like medicine - we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.</p>
+            <p className="text-xl text-secondary-foreground/80 leading-relaxed">
+              Existing supplements felt like medicine — we wanted to change that. Now we're building the first truly snackable nutraceutical brand for the country.
+            </p>
           </motion.div>
         </div>
       </section>
+
       {/* The Science */}
       <section id="science" className="py-24 md:py-32 bg-card">
         <div className="max-w-6xl mx-auto px-6">
@@ -245,7 +268,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-3 gap-6"
             variants={stagger}
             initial="hidden"
@@ -270,17 +293,16 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
       {/* Footer */}
       <footer className="bg-secondary text-secondary-foreground py-12 border-t border-secondary-foreground/10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
             <img src="/truwell-logo-nobg.png" alt="Truwell Logo" className="h-8 w-auto brightness-0 invert" />
           </div>
-          
           <div className="text-center md:text-left">
             <p className="text-secondary-foreground/60">stay well, true well.</p>
           </div>
-
           <div className="flex items-center gap-6">
             <a href="https://instagram.com/truwell.in" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-primary transition-colors flex items-center gap-2" data-testid="link-instagram">
               <FaInstagram />
@@ -292,18 +314,8 @@ export default function HomePage() {
           <p>&copy; {new Date().getFullYear()} Truwell. All rights reserved.</p>
         </div>
       </footer>
-      {/* Dialogs */}
-      <Dialog open={orderModalOpen} onOpenChange={setOrderModalOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="font-serif text-2xl">Order Coco Gut</DialogTitle>
-            <DialogDescription>
-              Fill out your details and we'll process your order immediately.
-            </DialogDescription>
-          </DialogHeader>
-          <OrderForm productId={1} onSuccess={() => setOrderModalOpen(false)} />
-        </DialogContent>
-      </Dialog>
+
+      {/* Waitlist Dialog */}
       <Dialog open={waitlistModalOpen} onOpenChange={setWaitlistModalOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
