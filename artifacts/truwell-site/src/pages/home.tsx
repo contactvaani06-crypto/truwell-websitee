@@ -69,10 +69,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl max-w-2xl text-foreground/80 mb-10"
-          >
-            Making nutrition fun, snackable, and accessible to everyday Indians.
-            No pills, no chores — just delicious fuel for a better life.
-          </motion.p>
+          >Making nutrition fun, snackable, and accessible to everyday Indians. No pills, no chores - just delicious fuel for a better life.</motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
