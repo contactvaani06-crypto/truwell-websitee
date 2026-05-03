@@ -2,6 +2,7 @@ import { Router } from "express";
 import { db, ordersTable, productsTable } from "@workspace/db";
 import { CreateOrderBody } from "@workspace/api-zod";
 import { eq } from "drizzle-orm";
+import { sendOrderConfirmation } from "../email.js";
 
 const router = Router();
 
@@ -41,6 +42,18 @@ router.post("/", async (req, res) => {
       .returning();
 
     const order = inserted[0];
+
+    sendOrderConfirmation({
+      name,
+      email,
+      productName: product.name,
+      quantity,
+      totalAmount,
+      address,
+      city,
+      pincode,
+    }).catch((err) => req.log.error({ err }, "Failed to send order confirmation email"));
+
     res.status(201).json({
       id: order.id,
       productId: order.productId,

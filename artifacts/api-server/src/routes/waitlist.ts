@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { db, waitlistTable } from "@workspace/db";
 import { JoinWaitlistBody } from "@workspace/api-zod";
+import { sendWaitlistConfirmation } from "../email.js";
 
 const router = Router();
 
@@ -20,6 +21,13 @@ router.post("/", async (req, res) => {
       .returning();
 
     const entry = inserted[0];
+
+    sendWaitlistConfirmation({
+      name,
+      email,
+      productName: product,
+    }).catch((err) => req.log.error({ err }, "Failed to send waitlist confirmation email"));
+
     res.status(201).json({
       id: entry.id,
       email: entry.email,
