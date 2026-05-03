@@ -239,7 +239,7 @@ export default function HomePage() {
       <section id="science" className="py-24 md:py-32 bg-card">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-sm font-bold tracking-widest uppercase text-primary mb-4">The Science</h2>
+            <h2 className="font-bold tracking-widest uppercase text-primary mb-4 text-[16px]">The Science</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-secondary mb-6">Digestion determines absorption.</h3>
             <p className="text-xl text-muted-foreground">
               Absorption determines results. Our products are built to work together, not in isolation.
