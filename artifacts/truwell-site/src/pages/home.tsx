@@ -50,7 +50,6 @@ export default function HomePage() {
           </div>
         </div>
       </nav>
-
       {/* Hero Section */}
       <section id="hero" className="relative min-h-[100dvh] pt-20 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.15),transparent_50%)]" />
@@ -85,7 +84,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Who We Are */}
       <section id="who-we-are" className="py-24 md:py-32 bg-card relative">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -100,9 +98,7 @@ export default function HomePage() {
               We are a group of young Indian college student visionaries who believe nutrition shouldn't be a chore.
             </p>
             <div className="mt-8 text-lg text-muted-foreground max-w-3xl mx-auto space-y-6">
-              <p>
-                Founded by a passionate group of health enthusiasts from India's top colleges, we're on a mission to transform the way the country fuels itself — one delicious bite at a time.
-              </p>
+              <p>Founded by a passionate group of health enthusiasts from India's top colleges, we're on a mission to transform the way the country fuels itself - one delicious bite at a time.</p>
               <p>
                 We combine modern nutritional science with traditional Indian wisdom to create products that actually taste good.
               </p>
@@ -110,7 +106,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* What We Do */}
       <section id="what-we-do" className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=')]" />
@@ -157,7 +152,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Our Products */}
       <section id="products" className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
@@ -233,7 +227,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Our Journey */}
       <section id="journey" className="py-24 md:py-32 bg-secondary text-secondary-foreground">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -256,7 +249,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* The Science */}
       <section id="science" className="py-24 md:py-32 bg-card">
         <div className="max-w-6xl mx-auto px-6">
@@ -293,7 +285,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-secondary text-secondary-foreground py-12 border-t border-secondary-foreground/10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -314,7 +305,6 @@ export default function HomePage() {
           <p>&copy; {new Date().getFullYear()} Truwell. All rights reserved.</p>
         </div>
       </footer>
-
       {/* Waitlist Dialog */}
       <Dialog open={waitlistModalOpen} onOpenChange={setWaitlistModalOpen}>
         <DialogContent className="sm:max-w-md">
