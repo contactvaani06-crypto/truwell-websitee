@@ -64,3 +64,8 @@ echo 'export * from "./generated/api";' > lib/api-zod/src/index.ts
 ```
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## Pending Integrations (not yet connected)
+
+- **Payments**: Stripe (UPI/Google Pay support) — user dismissed the Replit integration. Either re-propose `connector:ccfg_stripe_01K611P4YQR0SZM11XFRQJC44Y` or ask user for Stripe secret key to store as `STRIPE_SECRET_KEY`.
+- **Email**: Resend (transactional emails for orders + waitlist) — user dismissed the Replit integration. Either re-propose `connector:ccfg_resend_01K69QKYK789WN202XSE3QS17V` or ask user for Resend API key to store as `RESEND_API_KEY`. Alternative: Razorpay for India-first payments (supports UPI, PhonePe, Google Pay natively).
