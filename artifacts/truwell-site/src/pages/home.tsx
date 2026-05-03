@@ -33,7 +33,7 @@ export default function HomePage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50 transition-all">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo("hero")}>
-            <img src="/truwell-logo.png" alt="Truwell Logo" className="h-10 w-auto" />
+            <img src="/truwell-logo-new.png" alt="Truwell Logo" className="h-10 w-auto" />
             <span className="font-serif font-bold text-xl text-secondary tracking-tight">Truwell</span>
           </div>
           <div className="hidden md:flex items-center gap-8 font-medium text-sm text-foreground/80">
