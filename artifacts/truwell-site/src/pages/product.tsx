@@ -54,7 +54,7 @@ export default function ProductPage() {
             <ChevronLeft className="w-5 h-5" />
             <img src="/truwell-logo-nobg.png" alt="Truwell" className="h-8 w-auto" />
           </button>
-          <span className="text-sm font-medium text-muted-foreground hidden md:block">Coco Gut — Fibre Chocolate</span>
+          <span className="text-sm font-medium text-muted-foreground hidden md:block">Coco Gut - Fibre Chocolate</span>
           <CartDrawer />
         </div>
       </nav>
@@ -213,10 +213,10 @@ export default function ProductPage() {
           <section>
             <h2 className="text-2xl font-serif font-bold text-secondary mb-4">About Coco Gut</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Coco Gut is Truwell's flagship product — a rich, indulgent dark chocolate bar that secretly does something extraordinary: it delivers <strong className="text-secondary">7.34g of dietary fibre</strong> in every 24g bar. That's almost a third of your recommended daily fibre intake, wrapped in a treat you'll actually look forward to.
+              Coco Gut is Truwell's flagship product - a rich, indulgent dark chocolate bar that secretly does something extraordinary: it delivers <strong className="text-secondary">7.34g of dietary fibre</strong> in every 24g bar. That's almost a third of your recommended daily fibre intake, wrapped in a treat you'll actually look forward to.
             </p>
             <p className="text-muted-foreground leading-relaxed text-lg mt-4">
-              Made with dark chocolate, chickpeas, psyllium husk, and inulin — four powerhouse ingredients — it's designed to make gut health delicious, effortless, and habitual.
+              Made with dark chocolate, chickpeas, psyllium husk, and inulin - four powerhouse ingredients - it's designed to make gut health delicious, effortless, and habitual.
             </p>
           </section>
 
@@ -226,7 +226,7 @@ export default function ProductPage() {
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { title: "Gut Health", desc: "Feeds good gut bacteria, reduces bloating, and improves digestion." },
-                { title: "Blood Sugar", desc: "Slows glucose absorption, helping manage blood sugar spikes — key for India's diabetic population." },
+                { title: "Blood Sugar", desc: "Slows glucose absorption, helping manage blood sugar spikes - key for India's diabetic population." },
                 { title: "Absorption", desc: "A healthy gut absorbs nutrients better. Fibre prepares the gut, making every meal count more." },
                 { title: "Daily Habit", desc: "70%+ Indians are fibre deficient. One bar a day is a simple, delicious fix." },
               ].map((item) => (
