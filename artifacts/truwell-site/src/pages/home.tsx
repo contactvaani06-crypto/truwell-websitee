@@ -274,7 +274,7 @@ export default function HomePage() {
       <footer className="bg-secondary text-secondary-foreground py-12 border-t border-secondary-foreground/10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <img src="/truwell-logo.png" alt="Truwell Logo" className="h-8 w-auto brightness-0 invert" />
+            <img src="/truwell-logo-nobg.png" alt="Truwell Logo" className="h-8 w-auto brightness-0 invert" />
           </div>
           
           <div className="text-center md:text-left">
